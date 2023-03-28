@@ -1,0 +1,115 @@
+:root {
+    --color-primary: #f6aca2;
+    --color-secondary: #f49b90;
+    --color-tertiary: #f28b7d;
+    --color-quaternary: #f07a6a;
+    --color-quinary: #ee6352;
+  }
+  
+  .body1{
+    /* min-height: 100vh; */
+    /* font-weight: 50px; */
+    /* font-size: 10px; */ 
+    margin: 20px;
+    background-color: #eff8e2;
+  }
+  
+  .div1 {
+    
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    justify-content: space-between; 
+  }
+  .logo
+{
+    height: 95px;
+    width: 73px;
+
+}
+
+#div2 > img
+  {
+      width: 330px;
+      height: 230px;
+  }
+  #city{
+    font-size: 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: oblique;
+    font-weight: bold;
+  }
+  #allsummary{
+      width: 377px;
+      word-wrap:break-word;
+      text-align: center;
+      
+    
+  }
+
+  .div3{
+    font-size: 25px;
+    align-items: center;
+    
+  }
+  #myImage
+  {
+   
+    display: block;
+    width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  }
+  #cname
+  {
+     visibility: hidden;
+  }
+  .div4
+  {
+    
+    width: 218px;
+    margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 26px;
+  }
+  .form-select{
+    width:100px;
+  }
+  label
+  {
+    padding: 10px;
+  }
+  #allsummary > .div5{
+    background-repeat: no-repeat;
+    background-image: url("../Images/bg2.jpg"); 
+    background-size:90% 100%;
+    background-position: top;
+     padding: 75px;
+    }
+  #allsummary > .div6{
+    background-repeat: no-repeat;
+  
+    background-image: url("../Images/mobbg.avif");
+     background-size:90% 100%;
+     
+    
+    padding: 75px;
+     margin-bottom: 10px;
+     margin-top: 10px;
+    }
+  #allsummary > .div6 >.div7{
+    font-size: 38px;
+    font-weight: bold;
+    }
+  #allsummary > .div6 >.tra{
+    font-size: 38px;
+    font-weight: bold;
+    }
+    #allsummary > h3{
+      background-repeat: no-repeat;
+      
+      padding: 75px;
+      font-size: 60px;
+      font-weight: bold;
+      }
