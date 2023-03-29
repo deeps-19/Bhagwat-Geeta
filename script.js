@@ -22,17 +22,17 @@ const deeps = {
 
 
 input_btn.addEventListener("click", () => {
-if(isNaN(input_city.value))
+if(input_city.value>=19)
 {
-  text = "Please Number Only";
+  console.log("Please Number Only");
+  allsummary.innerHTML = `<h3>There are only 18 chapters</h3>`
 
 }
 else{
   
     if(select1.selected==true)
   {
-    // output_city.style.visibility='visible';
-    // document.write("1");
+
     if(flexRadioDefault1.checked==true)
     {
       if(input_city.value==1)
@@ -108,13 +108,18 @@ else{
       {
         image.src = "./Images/.jpg";
       }
+      else if(input_city.value>18)
+      {
+        image.src="";
+      }
+      document.getElementById('allsummary').innerHTML =""
       
       fetch("https://bhagavad-gita3.p.rapidapi.com/v2/chapters/" + input_city.value + "/", deeps)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
         // output_city.innerHTML = ;
-        allsummary.innerHTML = `<div >Chapter Name : "${data.name_translated}"</div>
+        allsummary.innerHTML = `<h3>Chapter Name : ${data.name_translated} </h3>
                                 <div class="div5">Chapter summary :"${data.chapter_summary}"</div>`;
       })
       .catch((err) => console.error(err));
@@ -193,13 +198,14 @@ else{
       }
       else if(input_city.value==18)
       {
-        image.src = "./Images/.jpg";
+        image.src = "./Images/18.jpg";
       }
       else(input_city.value < 18 || input_city.value== NaN )
       {
         // output_city.innerHTML= "There is only 18 Chapter"
       
       }
+      document.getElementById('allsummary').innerHTML =""
         
         fetch("https://bhagavad-gita3.p.rapidapi.com/v2/chapters/"+ input_city.value + "/", deeps)
       .then((response) => response.json())
@@ -211,17 +217,12 @@ else{
       })
       .catch((err) => console.error(err));
     }
-    else
-    {
-      // alert("Please select language");
-    }
-
+    
 
   }
   else if(select2.selected==true)
   {
-    // output_city.style.visibility='invisible';
-    // document.write("2");
+    
     if(input_city.value==1)
       {
         image.src = "./Images/अर्जुनविषादयोग.jpeg";
@@ -295,7 +296,7 @@ else{
       {
         image.src = "./Images/18.jpg";
       }
-      // location.reload()
+      
       
     if(flexRadioDefault1.checked==true)
     {
@@ -327,7 +328,7 @@ else{
                 
                 <div class="tra">${data[i].transliteration}</div>
                 <div class="div7"> Explanation </div>
-                <div>${engdescription}</div>
+                <div class="tra">${engdescription}</div>
                 </div>`
 
               // document.getElementById('allsummary').innerHTML +=`<div class="div6"><div class="div7">श्लोक ${data[i].verse_number}</div>"${data[i].text}"<div class="div7">अर्थ</div>${description}</div>`
@@ -340,6 +341,7 @@ else{
     }
     else if(flexRadioDefault2.checked==true)
     {
+      document.getElementById('allsummary').innerHTML =""
         fetch('https://bhagavad-gita3.p.rapidapi.com/v2/chapters/'+ input_city.value +'/verses/', deeps)
         
         .then((response) => response.json())
@@ -347,10 +349,9 @@ else{
         console.log(data);
         for (i = 0; i < data.length; i++) 
         {
-          // document.getElementById('allsummary').innerHTML +=`
-          // <div class="div6">श्लोक "${data[i].verse_number}"<br>"${data[i].text}"</div>`;
+          
           const hindiArray = data[i].translations;
-          // console.log("hindi"+ JSON.stringify(phoneticsArray))
+          
           for(const obj of hindiArray)
           {
             const author=obj.author_name;
@@ -359,7 +360,7 @@ else{
             console.log(author)
             if(author=="Swami Tejomayananda")
             {
-              // alert("true")
+              
               console.log("DESCripton"+description)
               document.getElementById('allsummary').innerHTML +=`<div class="div6"><div class="div7">श्लोक ${data[i].verse_number}</div>"${data[i].text}"<div class="div7">अर्थ</div>${description}</div>`
             }
